@@ -12,7 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Admin Login</title>
 	<link href="../assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="../style/login.css">
+	<link rel="stylesheet" type="text/css" href="../assets/css/login.css">
 </head>
 <body class="container">
 <?php

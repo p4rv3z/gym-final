@@ -12,9 +12,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Admin Panel</title>
 	<link href="../assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="../style/header.css">
-	<script src="../javascript/admin_header.js"></script>
-	<script src="../assets/jquery/jquery-3.1.1.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="../assets/css/header.css">
+
 </head>
 <body>
 
