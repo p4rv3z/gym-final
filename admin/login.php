@@ -71,14 +71,14 @@ function loginChecker($email,$password){
         </div>
     <div class="main-content">
            <form  method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" autocomplete="off"> 
-          <div class="input-group ">
-            <span class="input-group-addon"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span></span>
-            <?php if($error==101){
+           <?php if($error==101){
             		echo "<p class = 'error'>Email or password not match.</p>";
-            		}elseif(){
+            		}elseif($error==102){
             		echo "<p class = 'error'>Input field can't be empty.</p>";
             		}
             ?>
+          <div class="input-group ">
+            <span class="input-group-addon"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span></span>
             <input id="email" type="text" class="form-control" name="email" placeholder="Enter your Email">
           </div>
           <div class="input-group">

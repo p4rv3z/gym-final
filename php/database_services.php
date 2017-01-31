@@ -18,5 +18,19 @@ class Login{
 			return FALSE;
 		}
 	}
+	/**
+	* return single row of the table
+	* return type arrey
+	*/
+	function retrieveData($table_name,$email){
+		$sql = "SELECT * FROM `$table_name` WHERE email = '$email'";
+		$result = $GLOBALS['connection']->query($sql);
+		if ($result->num_rows==1) {
+			$row = $result->fetch_assoc();//convert to array
+			return $row;
+		}else{
+			return "Error from retrieveData";
+		}
+	}
 }
 ?>
