@@ -21,6 +21,7 @@
 	<title>Admin Panel</title>
 	<script src="../assets/jquery/jquery-3.1.1.min.js"></script>
 	<script src="../assets/bootstrap/js/bootstrap.min.js"></script>
+	<script src="../assets/javascript/pichart.js"></script>
 </head>
 <body>
 <?php
@@ -89,6 +90,9 @@ if (isset($_GET['logout'])) {
     			}
     			if ($page=='delete_image') {
 					include 'pages/delete_image_page.php';
+    			}
+    			if ($page=='account') {
+					include 'pages/account_page.php';
     			}
     		}else{
     			include 'pages/home.php';
