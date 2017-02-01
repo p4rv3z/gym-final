@@ -79,10 +79,16 @@ if (isset($_GET['logout'])) {
     	<?php
     		if (isset($page)) {
     			if ($page=='admin_profile') {
-    			include 'pages/admin_profile_page.php';
+    				include 'pages/admin_profile_page.php';
     			}
-    			if ($page=='admin_profile') {
-
+    			if ($page=='member_list') {
+					include 'pages/member_list_page.php';
+    			}
+    			if ($page=='gallery') {
+					include 'pages/gallery_page.php';
+    			}
+    			if ($page=='delete_image') {
+					include 'pages/delete_image_page.php';
     			}
     		}else{
     			include 'pages/home.php';

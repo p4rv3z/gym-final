@@ -29,10 +29,31 @@ class DatabaseHelper{
 			$row = $result->fetch_assoc();//convert to array
 			return $row;
 		}else{
-			return "Error from retrieveData";
+			//return error msg
+			return "";
 		}
 	}
+
 	function updateQuery($sql){
+		$result = $GLOBALS['connection']->query($sql);
+		return $result;
+	}
+
+	function deleteQuery($sql){
+		$result = $GLOBALS['connection']->query($sql);
+		return $result;
+	}
+
+	function insertQuery($sql){
+		$result = $GLOBALS['connection']->query($sql);
+		return $result;
+	}
+	function getAllData($table_name){
+		$sql = "SELECT * FROM `$table_name`";
+		$result = $GLOBALS['connection']->query($sql);
+		return $result;
+	}
+	function runQuery($sql){
 		$result = $GLOBALS['connection']->query($sql);
 		return $result;
 	}

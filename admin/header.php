@@ -21,10 +21,10 @@
             </div>
 
             <ul class="pure-menu-list">
-                <li class="pure-menu-item"><a href="#" class="pure-menu-link">Home</a></li>
-                <li class="pure-menu-item"><a href="#" class="pure-menu-link">About</a></li>
-                <li class="pure-menu-item"><a href="#" class="pure-menu-link">Services</a></li>
-                <li class="pure-menu-item"><a href="#" class="pure-menu-link">Contact</a></li>
+                <li class="pure-menu-item"><a href="#" class="pure-menu-link">Account</a></li>
+                <li class="pure-menu-item"><a href="member_list.php" class="pure-menu-link">Member</a></li>
+                <li class="pure-menu-item"><a href="gallery.php" class="pure-menu-link">Gallery</a></li>
+                <li class="pure-menu-item"><a href="#" class="pure-menu-link">Message</a></li>
             </ul>
         </div>
     </div>
