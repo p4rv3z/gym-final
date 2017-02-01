@@ -45,7 +45,7 @@ if (!empty($_SESSION["admin_email"]) && !empty($_SESSION["admin_password"])) {
 }
 function loginChecker($email,$password){
 	$admin_table_name = 'admin';
-	$login = new Login();
+	$login = new DatabaseHelper();
 	$result=$login->checkLogin($admin_table_name,$email,$password);
 	if ($result) {
 		return TRUE;
@@ -55,8 +55,8 @@ function loginChecker($email,$password){
 }
 function getAdminInfo($email){
 	$admin_info_table_name = 'admin_info';
-	$login = new Login();
-	$result=$login->retrieveData($admin_info_table_name,$email);/*return single rows arrey of admin data*/
+	$get_admin_info = new DatabaseHelper();
+	$result=$get_admin_info->retrieveData($admin_info_table_name,$email);/*return single rows arrey of admin data*/
 	return $result;
 }
 if (isset($_GET['logout'])) {

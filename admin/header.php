@@ -11,7 +11,7 @@
                 <a href="admin_profile.php"><span class="glyphicon glyphicon-pencil"></span></a>
                 </div>
                 <div style="color: gray;text-align: center;text-transform:none;">
-                <img class = "img-circle" src="../images/<?php echo $image_name;?>" style="width: 50px;height: 50px;">
+                <img class = "img-circle" src="../images/<?php echo $image_name;?>" style="width: 50px;height: auto;">
                 <br>
                 <?php echo substr($name, 0,10);?>
                 </div>

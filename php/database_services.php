@@ -3,7 +3,7 @@
 if (!isset($database_include)) {
 	include '../php/database_connection.php';
 }
-class Login{
+class DatabaseHelper{
 	function checkLogin($table_name,$email,$password){
 		$sql = "SELECT * FROM `$table_name` WHERE email = '$email'";
 		$result = $GLOBALS['connection']->query($sql);
@@ -31,6 +31,10 @@ class Login{
 		}else{
 			return "Error from retrieveData";
 		}
+	}
+	function updateQuery($sql){
+		$result = $GLOBALS['connection']->query($sql);
+		return $result;
 	}
 }
 ?>

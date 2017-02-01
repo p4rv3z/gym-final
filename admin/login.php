@@ -26,6 +26,7 @@ if (!empty($_SESSION["admin_email"]) && !empty($_SESSION["admin_password"])) {
 		header("Location: index.php");
 	}else{
 		$error = 101;//email or password not match
+		unsetSession();
 	}
 	
 }else{
@@ -41,6 +42,7 @@ if (!empty($_SESSION["admin_email"]) && !empty($_SESSION["admin_password"])) {
 			}else{
 			//error msg
 				$error = 101;//email or password not match
+				unsetSession();
 			}
 		}else{
 			//field empty
@@ -54,7 +56,7 @@ function unsetSession(){
 }
 function loginChecker($email,$password){
 	$admin_table_name = 'admin';
-	$login = new Login();
+	$login = new DatabaseHelper();
 	$result=$login->checkLogin($admin_table_name,$email,$password);
 	if ($result) {
 		return TRUE;
