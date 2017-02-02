@@ -1,4 +1,9 @@
-
+<?php
+session_start();
+include 'php/database_connection.php';
+$database_include = TRUE;
+include 'php/database_services.php';
+?>
 <!DOCTYPE html>
  <html class="no-js">
 	<head>
@@ -39,13 +44,47 @@
 	<link rel="stylesheet" href="assets/front_end_assets/css/owl.theme.default.min.css">
 	<!-- Theme style  -->
 	<link rel="stylesheet" href="assets/front_end_assets/css/style.css">
-
+	<!-- My CSS -->
+	<link rel="stylesheet" type="text/css" href="./assets/css/login.css">
 	<!-- Modernizr JS -->
 	<script src="assets/front_end_assets/js/modernizr-2.6.2.min.js"></script>
 	
 	</head>
 	<body>
-	
+	<?php
+	$name = '';
+	$email = '';
+	$image_name = '';
+	$flag = FALSE;
+	if(!empty($_SESSION["user_email"])&&!empty($_SESSION["user_password"])){
+			$email = $_SESSION["user_email"];
+			$password = $_SESSION["user_password"];
+			//check pass
+			$check_user = new DatabaseHelper();
+			$table_name = 'users';
+			$result = $check_user->checkLogin($table_name,$email,$password);
+			if ($result) {
+				//loged in
+				$flag = TRUE;
+				$table_name = 'users_information';
+				$result = $check_user->retrieveData($table_name,$email);
+				$name = $result['name'];
+				$email = $result['email'];
+				$image_name = $result['image_name'];
+			}else{
+				//logout
+				$flag = FALSE;
+			}
+	}else{
+		//jumpto("index.php");	
+	}
+	if (isset($_GET['logout'])) {
+	unset($_SESSION['user_email']);
+	unset($_SESSION['user_password']);
+	header("Location: ./index.php");
+	exit;
+ 	}
+	?>
 	
 	<div id="fh5co-page">
 	

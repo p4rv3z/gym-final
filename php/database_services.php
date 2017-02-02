@@ -1,7 +1,7 @@
 <?php
 //after connecting database 
 if (!isset($database_include)) {
-	include '../php/database_connection.php';
+	include 'database_connection.php';
 }
 class DatabaseHelper{
 	function checkLogin($table_name,$email,$password){

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 02, 2017 at 02:18 PM
+-- Generation Time: Feb 02, 2017 at 09:06 PM
 -- Server version: 10.1.16-MariaDB
 -- PHP Version: 7.0.9
 
@@ -98,11 +98,11 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `email`, `password`) VALUES
-(11, 'jashim@yahoo.com', '123456'),
-(12, 'firoj@hotmail.com', '123456'),
-(14, 'nila@live.com', '123456'),
-(19, 'sudip@gmail.com', '123456'),
-(34, 'tuni@gmail.com', '123456');
+(11, 'jashim@yahoo.com', '8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92'),
+(12, 'firoj@hotmail.com', '8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92'),
+(14, 'nila@live.com', '8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92'),
+(19, 'sudip@gmail.com', '8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92'),
+(34, 'tuni@gmail.com', '8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92');
 
 -- --------------------------------------------------------
 
