@@ -13,7 +13,7 @@
 						<?php 
 							if (!$flag) {
 						?>
-						<li><a href="sign_up.php">Log In</a></li>
+						<li><a href="log_in.php">Log In</a></li>
 						<li class="cta"><a href="registration.php">Online Admission</a></li>
 						<?php 	
 							}else{

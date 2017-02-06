@@ -1,4 +1,4 @@
 <?php
-$pages='sign_up';
+$pages='login';
 include './index.php';
 ?>

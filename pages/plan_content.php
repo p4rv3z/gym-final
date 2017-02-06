@@ -22,7 +22,7 @@
 								<li><a href="#">5 Massage</a></li>
 								<li><a href="#">5 Body Building</a></li>
 							</ul>
-							<a href="#" class="btn btn-select-plan btn-sm">Select Plan</a>
+							<a href="./registration.php?plan=starter" class="btn btn-select-plan btn-sm">Select Plan</a>
 						</div>
 					</div>
 
@@ -40,7 +40,7 @@
 								<li><a href="#">5 Massage</a></li>
 								<li><a href="#">5 Body Building</a></li>
 							</ul>
-							<a href="#" class="btn btn-select-plan btn-sm">Select Plan</a>
+							<a href="./registration.php?plan=basic" class="btn btn-select-plan btn-sm">Select Plan</a>
 						</div>
 					</div>
 
@@ -58,7 +58,7 @@
 								<li><a href="#">5 Massage</a></li>
 								<li><a href="#">5 Body Building</a></li>
 							</ul>
-							<a href="#" class="btn btn-select-plan btn-sm">Select Plan</a>
+							<a href="./registration.php?plan=pro" class="btn btn-select-plan btn-sm">Select Plan</a>
 						</div>
 					</div>
 
@@ -76,7 +76,7 @@
 								<li><a href="#"> 5 Massage</a></li>
 								<li><a href="#">10 Body Building</a></li>
 							</ul>		
-							<a href="#" class="btn btn-select-plan btn-sm">Select Plan</a>
+							<a href="./registration.php?plan=unlimited" class="btn btn-select-plan btn-sm">Select Plan</a>
 						</div>
 					</div>
 				</div>
@@ -101,7 +101,7 @@
 							<img src="assets/front_end_assets/images/fit-dumbell.svg" alt="Cycling">
 							<h3>Body Combat</h3>
 							<p  style="text-align: justify;">BODYCOMBAT is a high-energy martial arts-inspired workout that is totally non-contact. Punch and kick your way to fitness and burn up to 740 calories* in a class.</p>
-							<span><a href="#" class="btn btn-default">Join Now</a></span>
+							<span><a href="./registration.php?plan=pro" class="btn btn-default">Join Now</a></span>
 						</div>
 					</div>
 					<div class="col-md-4 col-sm-6">
@@ -109,7 +109,7 @@
 							<img src="assets/front_end_assets/images/fit-yoga.svg" alt="">
 							<h3>Yoga Programs</h3>
 							<p style="text-align: justify;">Yoga gives you the energy, inspiration, and power to transform your body in a fun, joyful, and liberating way. its own epistemology and metaphysics.</p>
-							<span><a href="#" class="btn btn-default">Join Now</a></span>
+							<span><a href="./registration.php?plan=pro" class="btn btn-default">Join Now</a></span>
 						</div>
 					</div>
 					<div class="col-md-4 col-sm-6">
@@ -117,7 +117,7 @@
 							<img src="assets/front_end_assets/images/fit-cycling.svg" alt="">
 							<h3>Cycling Program</h3>
 							<p style="text-align: justify;">The workout is a full-body, high-intensity, rhythm-based cardio-party. It maximizes calorie burn, accelerates fat loss, builds strength, and improves lean muscle tone. </p>
-							<span><a href="#" class="btn btn-default">Join Now</a></span>
+							<span><a href="./registration.php?plan=pro" class="btn btn-default">Join Now</a></span>
 						</div>
 					</div>
 					<div class="col-md-4 col-sm-6">
@@ -125,7 +125,7 @@
 							<img src="assets/front_end_assets/images/fit-boxing.svg" alt="Cycling">
 							<h3>Boxing Fitness</h3>
 							<p style="text-align: justify;">Gyms that are built on the idea of boxing-for-fitness are popping up left and right across the country, most advertising the promise of helping you burn up to 1,000 calories in an hour</p>
-							<span><a href="#" class="btn btn-default">Join Now</a></span>
+							<span><a href="./registration.php?plan=pro" class="btn btn-default">Join Now</a></span>
 						</div>
 					</div>
 					<div class="col-md-4 col-sm-6">
@@ -133,7 +133,7 @@
 							<img src="assets/front_end_assets/images/fit-swimming.svg" alt="">
 							<h3>Swimming Program</h3>
 							<p style="text-align: justify;">The body-shaping benefits of swimming workouts are the result of a perfect storm of calorie burn and muscle recruitment. An easy swim burns around 500 calories an hour. </p>
-							<span><a href="#" class="btn btn-default">Join Now</a></span>
+							<span><a href="./registration.php?plan=pro" class="btn btn-default">Join Now</a></span>
 						</div>
 					</div>
 					<div class="col-md-4 col-sm-6">
@@ -141,7 +141,7 @@
 							<img src="assets/front_end_assets/images/fit-massage.svg" alt="">
 							<h3>Massage</h3>
 							<p style="text-align: justify;">Massage describes a comprehensive system, rather than a single technique, that involves therapeutic, manipulation and movement of soft tissues to resolve pain and dysfunction.</p>
-							<span><a href="#" class="btn btn-default">Join Now</a></span>
+							<span><a href="./registration.php?plan=pro" class="btn btn-default">Join Now</a></span>
 						</div>
 					</div>
 				</div>

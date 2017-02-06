@@ -45,7 +45,8 @@ include 'php/database_services.php';
 	<!-- Theme style  -->
 	<link rel="stylesheet" href="assets/front_end_assets/css/style.css">
 	<!-- My CSS -->
-	<link rel="stylesheet" type="text/css" href="./assets/css/login.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/login.css">
+	<link rel="stylesheet" type="text/css" href="assets/bootstrap/css/bootstrap.css">
 	<!-- Modernizr JS -->
 	<script src="assets/front_end_assets/js/modernizr-2.6.2.min.js"></script>
 	
@@ -68,12 +69,19 @@ include 'php/database_services.php';
 				$flag = TRUE;
 				$table_name = 'users_information';
 				$result = $check_user->retrieveData($table_name,$email);
+				if($result){
 				$name = $result['name'];
 				$email = $result['email'];
 				$image_name = $result['image_name'];
+				}else{
+					$name = 'Mr. X';
+					$email = 'info@mail.com';
+					$image_name = 'default.png';
+				}
 			}else{
 				//logout
 				$flag = FALSE;
+				
 			}
 	}else{
 		//jumpto("index.php");	
@@ -96,8 +104,8 @@ include 'php/database_services.php';
 			if ($pages=='contact') {
 				include './pages/contact_content.php';
 			}
-			if ($pages=='sign_up') {
-				include './pages/sign_up_content.php';
+			if ($pages=='login') {
+				include './pages/log_in_content.php';
 			}
 			if ($pages=='about') {
 				include './pages/about_content.php';

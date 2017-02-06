@@ -21,7 +21,7 @@ if (!empty($_SESSION["user_email"]) && !empty($_SESSION["user_password"])) {
 			if (loginChecker($email,$password)) {
 				$_SESSION["user_email"] = $email;
 				$_SESSION["user_password"] = $password;
-				header("Location: ./index.php");
+				header("Location: user_admin/");
 			}else{
 				//error msg
 				$error = 101;//email or password not match
