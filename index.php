@@ -90,9 +90,6 @@ include 'php/database_services.php';
 	
 		<?php include'./includes/header_top.php'; ?>
 
-
-
-
 		<?php 
 			if (isset($pages)) {
 

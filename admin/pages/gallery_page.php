@@ -70,6 +70,7 @@ function reArrayFiles($file)
         <img src="../images/<?php echo $row['image_name']?>" style="width: 100%;">
         </a>
     </div>
+	
   </div>
   <?php
   	}

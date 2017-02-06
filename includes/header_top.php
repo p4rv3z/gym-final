@@ -20,7 +20,7 @@
 						?>
 						<li class="dropdown">
 							<a class="dropdown-toggle" data-toggle="dropdown" href="">
-								<?php  echo htmlspecialchars($name);?>
+								<?php  echo substr(htmlspecialchars($name), 0,10);?>
 								<img src="./images/<?php echo htmlspecialchars($image_name);?>" style="width:25px;height:25px; margin-left:5px">
 								<span class="caret"></span>
 							</a>

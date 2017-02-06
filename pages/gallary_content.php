@@ -1,105 +1,35 @@
 <div id="fh5co-work-section" class="fh5co-light-grey-section">
 		<div class="container">
 			<div class="row">
+			
+		<?php
+			$table_name = 'gallery_image_list';
+			$get_image_list = new DatabaseHelper();
+			$result = $get_image_list->getAllData($table_name);
+				if ($result) {
+					//image found
+					while($row=$result->fetch_array()){
+			?>
 				<div class="col-md-4 animate-box">
 					<a href="#" class="item-grid text-center">
-						<div class="image" style="background-image: url(assets/front_end_assets/images/image_1.jpg)"></div>
+						<div class="image" style="background-image: url(images/<?php echo $row['image_name']?>)"></div>
+						<!--
 						<div class="v-align">
 							<div class="v-align-middle">
 								<h3 class="title">Geographical App</h3>
-								<h5 class="category">Web Application</h5>
+								<h5 class="category"><?php echo $row['image_name']?></h5>
 							</div>
 						</div>
+						-->
 					</a>
 				</div>
-				<div class="col-md-4 animate-box">
-					<a href="#" class="item-grid text-center">
-						<div class="image" style="background-image: url(assets/front_end_assets/images/image_2.jpg)"></div>
-						<div class="v-align">
-							<div class="v-align-middle">
-								<h3 class="title">Geographical App</h3>
-								<h5 class="category">User Interface</h5>
-							</div>
-						</div>
-					</a>
-				</div>
-				<div class="col-md-4 animate-box">
-					<a href="#" class="item-grid text-center">
-						<div class="image" style="background-image: url(assets/front_end_assets/images/image_3.jpg)"></div>
-						<div class="v-align">
-							<div class="v-align-middle">
-								<h3 class="title">Geographical App</h3>
-								<h5 class="category">Branded</h5>
-							</div>
-						</div>
-					</a>
-				</div>
-				<div class="col-md-4 animate-box">
-					<a href="#" class="item-grid text-center">
-						<div class="image" style="background-image: url(assets/front_end_assets/images/image_4.jpg)"></div>
-						<div class="v-align">
-							<div class="v-align-middle">
-								<h3 class="title">Geographical App</h3>
-								<h5 class="category">Web</h5>
-							</div>
-						</div>
-					</a>
-				</div>
-				<div class="col-md-4 animate-box">
-					<a href="#" class="item-grid text-center">
-						<div class="image" style="background-image: url(assets/front_end_assets/images/image_5.jpg)"></div>
-						<div class="v-align">
-							<div class="v-align-middle">
-								<h3 class="title">Geographical App</h3>
-								<h5 class="category">Illustration</h5>
-							</div>
-						</div>
-					</a>
-				</div>
-				<div class="col-md-4 animate-box">
-					<a href="#" class="item-grid text-center">
-						<div class="image" style="background-image: url(assets/front_end_assets/images/image_6.jpg)"></div>
-						<div class="v-align">
-							<div class="v-align-middle">
-								<h3 class="title">Geographical App</h3>
-								<h5 class="category">Web Application</h5>
-							</div>
-						</div>
-					</a>
-				</div>
-				<div class="col-md-4 animate-box">
-					<a href="#" class="item-grid text-center">
-						<div class="image" style="background-image: url(assets/front_end_assets/images/image_7.jpg)"></div>
-						<div class="v-align">
-							<div class="v-align-middle">
-								<h3 class="title">Geographical App</h3>
-								<h5 class="category">Web Application</h5>
-							</div>
-						</div>
-					</a>
-				</div>
-				<div class="col-md-4 animate-box">
-					<a href="#" class="item-grid text-center">
-						<div class="image" style="background-image: url(assets/front_end_assets/images/image_8.jpg)"></div>
-						<div class="v-align">
-							<div class="v-align-middle">
-								<h3 class="title">Geographical App</h3>
-								<h5 class="category">Web Application</h5>
-							</div>
-						</div>
-					</a>
-				</div>
-				<div class="col-md-4 animate-box">
-					<a href="#" class="item-grid text-center">
-						<div class="image" style="background-image: url(assets/front_end_assets/images/image_9.jpg)"></div>
-						<div class="v-align">
-							<div class="v-align-middle">
-								<h3 class="title">Geographical App</h3>
-								<h5 class="category">Web Application</h5>
-							</div>
-						</div>
-					</a>
-				</div>
+		<?php
+					}
+			}else{
+				//image not found
+				echo "Image not listed.";
+			}
+		?>
 			</div>
 		</div>
 	</div>
