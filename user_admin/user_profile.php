@@ -1,4 +1,4 @@
 <?php
-$page = "admin_profile";
+$page = "user_profile";
 include 'index.php';
 ?>

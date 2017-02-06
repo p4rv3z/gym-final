@@ -31,7 +31,7 @@ if(isset($_POST['registration'])){
 					//successfull
 					$_SESSION['user_email'] = $email;
 					$_SESSION['user_password'] = $password;
-					header("Location: user_admin/");
+					header("Location: user_admin/user_profile.php");
 					}else{
 					$error_msg = 'something went wrong';
 				}

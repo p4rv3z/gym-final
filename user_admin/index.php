@@ -28,6 +28,8 @@
 $email = '';
 $name = '';
 $image_name = '';
+$user_info = '';
+$flag = FALSE;
 if (!empty($_SESSION["user_email"]) && !empty($_SESSION["user_password"])) {
 	//has email and password
 	$email = $_SESSION["user_email"];
@@ -37,9 +39,16 @@ if (!empty($_SESSION["user_email"]) && !empty($_SESSION["user_password"])) {
 		header("Location: ../log_in.php");
 	}else{
 		$row = getUserAdminInfo($email);
+		if (!empty($row)) {
+		$user_info = $row;
 		$email = $row['email'];
 		$name = $row['name'];
 		$image_name = $row['image_name'];
+		if (!empty($image_name)) {
+			$flag = TRUE;
+		}
+		
+		}
 	}
 }else{
 	header("Location: ../log_in.php");
@@ -79,8 +88,8 @@ if (isset($_GET['logout'])) {
     <div class="content">
     	<?php
     		if (isset($page)) {
-    			if ($page=='admin_profile') {
-    				//include 'pages/admin_profile_page.php';
+    			if ($page=='user_profile') {
+    				include 'pages/user_profile_page.php';
     			}
     			if ($page=='member_list') {
 					//include 'pages/member_list_page.php';

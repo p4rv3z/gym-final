@@ -30,7 +30,7 @@ class DatabaseHelper{
 			return $row;
 		}else{
 			//return error msg
-			return "";
+			return 0;
 		}
 	}
 
