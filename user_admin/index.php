@@ -21,7 +21,8 @@
 	<title>Admin Panel</title>
 	<script src="../assets/jquery/jquery-3.1.1.min.js"></script>
 	<script src="../assets/bootstrap/js/bootstrap.min.js"></script>
-	<script src="../assets/javascript/pichart.js"></script>
+	<script src="../assets/javascript/chart.js"></script>
+	<script src="../assets/javascript/chart.min.js"></script>
 </head>
 <body>
 <?php
@@ -30,6 +31,7 @@ $name = '';
 $image_name = '';
 $user_info = '';
 $flag = FALSE;
+$row = '';
 if (!empty($_SESSION["user_email"]) && !empty($_SESSION["user_password"])) {
 	//has email and password
 	$email = $_SESSION["user_email"];
@@ -94,8 +96,8 @@ if (isset($_GET['logout'])) {
     			if ($page=='user_activities') {
 					include 'pages/user_activities_page.php';
     			}
-    			if ($page=='gallery') {
-					//include 'pages/gallery_page.php';
+    			if ($page=='add_activities') {
+					include 'pages/add_activities_page.php';
     			}
     			if ($page=='delete_image') {
 					//include 'pages/delete_image_page.php';
