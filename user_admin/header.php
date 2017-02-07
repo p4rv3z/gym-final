@@ -21,8 +21,7 @@
             </div>
 
             <ul class="pure-menu-list">
-                <li class="pure-menu-item"><a href="#" class="pure-menu-link">Account</a></li>
-                <li class="pure-menu-item"><a href="#" class="pure-menu-link">Message</a></li>
+                <li class="pure-menu-item"><a href="user_activities.php" class="pure-menu-link">User Activities</a></li>
             </ul>
         </div>
     </div>

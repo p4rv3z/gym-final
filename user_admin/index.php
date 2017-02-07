@@ -91,8 +91,8 @@ if (isset($_GET['logout'])) {
     			if ($page=='user_profile') {
     				include 'pages/user_profile_page.php';
     			}
-    			if ($page=='member_list') {
-					//include 'pages/member_list_page.php';
+    			if ($page=='user_activities') {
+					include 'pages/user_activities_page.php';
     			}
     			if ($page=='gallery') {
 					//include 'pages/gallery_page.php';

@@ -32,8 +32,8 @@
           								<p style="color: black;"><?php echo htmlspecialchars($email);?></p>
           							</div><hr>
           						</li>
-          						<li><a href="#">Activities</a></li><br>
-          						<li><a href="user_profile.php">Profile</a></li><br>
+          						<li><a href="user_admin/user_activities.php">Activities</a></li><br>
+          						<li><a href="user_admin/user_profile.php">Profile</a></li><br>
           						<li><a href="index.php?logout">Logout</a></li>
         					</ul>
       					</li>

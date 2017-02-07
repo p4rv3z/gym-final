@@ -3,11 +3,11 @@
     $name = '';
     $contact_number = '';
     $date_of_birth = '';
-    $gender = '';
+    $gender = 'Male';
     $address = '';
 
 if (!empty($email)) {
-  if (!empty($row)) {
+  if (!empty($row['name'])) {
     $name = $row['name'];
     $contact_number = $row['contact_number'];
     $date_of_birth = $row['date_of_birth'];
@@ -57,16 +57,13 @@ if (isset($_POST['upload_image'])) {
 }
 ///data update
     if (isset($_POST['update'])) {
-      $name = $_POST['name'];
-      $password = $_POST['password'];
-      $contact_number = $_POST['contact_number'];
-      $date_of_birth = $_POST['date_of_birth'];
-      $gender = $_POST['gender'];
-      $address = $_POST['address'];
-      if (!empty($name)&&!empty($email)&&!empty($contact_number)&&!empty($date_of_birth)&&!empty($gender)&&!empty($address)) {
-        //todotodotodotodttoooooooooooooooooooo
-        $email = htmlspecialchars(strip_tags(trim($_POST['email'])));
-        $password = hash('sha256',htmlspecialchars(strip_tags(trim($_POST['password']))));
+      $name = htmlspecialchars(strip_tags(trim($_POST['name'])));
+      $password = hash('sha256',htmlspecialchars(strip_tags(trim($_POST['password']))));
+      $contact_number = htmlspecialchars(strip_tags(trim($_POST['contact_number'])));
+      $date_of_birth = htmlspecialchars(strip_tags(trim($_POST['date_of_birth'])));
+      $gender = htmlspecialchars(strip_tags(trim($_POST['gender'])));
+      $address = htmlspecialchars(strip_tags(trim($_POST['address'])));
+      if (!empty($name)&&!empty($contact_number)&&!empty($date_of_birth)&&!empty($gender)&&!empty($address)) {
         $query = new DatabaseHelper();
         
         if (!empty($password)) {
@@ -88,7 +85,7 @@ if (isset($_POST['upload_image'])) {
           if (!$result) {
             $error_msg = 'Data update failed.';
           }else{
-            //header("refresh: 0;");
+            header("refresh: 0;");
           }
       }else{
         $error_msg = "Input Field Can't be empty.";
