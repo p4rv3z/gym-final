@@ -4,7 +4,8 @@ $weight = '';
 $heart_rate = '';
 $workout = '';
 $age = '';
-$date = '';
+$dat = '';
+$error_msg = '';
 if (!empty($email)) {
 	if (isset($_POST['add'])) {
 		$height = $_POST['height'];
@@ -13,12 +14,13 @@ if (!empty($email)) {
 		$workout = $_POST['workout'];
 		$dob = $row['date_of_birth'];
 		$age = calculateAge($dob);
+		$dat = trim(date('Y-m-d'));
 		if (!empty($height)&&!empty($weight)&&!empty($workout)&&!empty($age)) {
 			if (empty($heart_rate)) {
 				$heart_rate = getHeartRate($age);
 			}
 			$query = new DatabaseHelper();
-			$sql = "INSERT INTO `user_activities`(`email`, `height`, `weight`, `heart_rate`, `workout`, `age`) VALUES ('$email','$height','$weight','$heart_rate','$workout','$age')";
+			$sql = "INSERT INTO `user_activities`(`date`, `email`, `height`, `weight`, `heart_rate`, `workout`, `age`) VALUES ('$dat','$email','$height','$weight','$heart_rate','$workout','$age')";
 			$result = $query->insertQuery($sql);
           	if ($result === TRUE) {
             	header("Location: user_activities.php");
@@ -50,6 +52,7 @@ function getHeartRate($age){
 <div>
 <form class="form-horizontal" method="POST" action="" enctype="multipart/form-data">
 	<div class="row">
+	<?php if (!empty($error_msg)) {echo "<p style='color:red;'>$error_msg</p>";}?>
 		<div class="col-lg-6">
 			<p>Enter your Height (CM):</p>
 			<input type="number" class="form-control input-lg" name="height" placeholder="Height">

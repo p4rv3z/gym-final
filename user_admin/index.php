@@ -30,6 +30,7 @@ $email = '';
 $name = '';
 $image_name = '';
 $user_info = '';
+$gender = '';
 $flag = FALSE;
 $row = '';
 if (!empty($_SESSION["user_email"]) && !empty($_SESSION["user_password"])) {
@@ -45,6 +46,7 @@ if (!empty($_SESSION["user_email"]) && !empty($_SESSION["user_password"])) {
 		$user_info = $row;
 		$email = $row['email'];
 		$name = $row['name'];
+		$gender = $row['gender'];
 		$image_name = $row['image_name'];
 		if (!empty($image_name)) {
 			$flag = TRUE;
