@@ -44,13 +44,13 @@
       		<img src="../images/<?php echo $single_row['image_name']?>" style="width: 25px;height: auto;">
     		</div>
     		<div class="col-sm-3">
-      		<p><?php echo $single_row['name'];?></p>
+      		<p><?php echo substr($single_row['name'],0,16);?></p>
     		</div>
     		<div class="col-sm-3">
       		<p><?php echo $single_row['email'];?></p>
     		</div>
     		<div class="col-sm-3">
-      		<p><?php echo $single_row['contact_number'];?></p>
+      		<p><?php echo substr($single_row['contact_number'],0,16);?></p>
     		</div>
     		<div class="col-sm-2">
     		<a href="?view=<?php echo $single_row['email'];?>" style="padding: 5px"><span class="glyphicon glyphicon-pencil"></span></a>

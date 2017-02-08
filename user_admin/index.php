@@ -101,11 +101,14 @@ if (isset($_GET['logout'])) {
     			if ($page=='add_activities') {
 					include 'pages/add_activities_page.php';
     			}
-    			if ($page=='delete_image') {
-					//include 'pages/delete_image_page.php';
+    			if ($page=='message') {
+					include 'pages/message_page.php';
     			}
-    			if ($page=='account') {
-					//include 'pages/account_page.php';
+    			if ($page=='send_message') {
+					include 'pages/send_message_page.php';
+    			}
+    			if ($page=='read_message') {
+					include 'pages/read_message_page.php';
     			}
     		}else{
     			include 'pages/home.php';

@@ -4,7 +4,7 @@
 		$sql = "SELECT * FROM `user_activities` WHERE id = (SELECT MAX(id) FROM `user_activities` WHERE email = '$email')";
 		$result = $query->runQuery($sql);
 		if ($result->num_rows>0) {
-		$max_row = $result->fetch_assoc();
+			$max_row = $result->fetch_assoc();
 			$bmi_status = calculateBMI($max_row);
 		}
 		}
