@@ -1,60 +1,34 @@
-https://www.dyclassroom.com/chartjs/chartjs-how-to-draw-line-graph-using-data-from-mysql-table-and-php
 $(document).ready(function(){
 	$.ajax({
-		url : "http://localhost/chartjs/followersdata.php",
-		type : "GET",
+		url : "http://localhost/project/gym-final/php/api.php",
+		type : "json",
 		success : function(data){
 			console.log(data);
-
-			var userid = [];
-			var facebook_follower = [];
-			var twitter_follower = [];
-			var googleplus_follower = [];
+			var date = [];
+			var value = [];
 
 			for(var i in data) {
-				userid.push("UserID " + data[i].userid);
-				facebook_follower.push(data[i].facebook);
-				twitter_follower.push(data[i].twitter);
-				googleplus_follower.push(data[i].googleplus);
+				date.push(data[i].date);
+				value.push(data[i].value);
 			}
 
 			var chartdata = {
-				labels: userid,
+				labels: date,
 				datasets: [
 					{
-						label: "facebook",
+						label: "BMI",
 						fill: false,
 						lineTension: 0.1,
 						backgroundColor: "rgba(59, 89, 152, 0.75)",
 						borderColor: "rgba(59, 89, 152, 1)",
 						pointHoverBackgroundColor: "rgba(59, 89, 152, 1)",
 						pointHoverBorderColor: "rgba(59, 89, 152, 1)",
-						data: facebook_follower
-					},
-					{
-						label: "twitter",
-						fill: false,
-						lineTension: 0.1,
-						backgroundColor: "rgba(29, 202, 255, 0.75)",
-						borderColor: "rgba(29, 202, 255, 1)",
-						pointHoverBackgroundColor: "rgba(29, 202, 255, 1)",
-						pointHoverBorderColor: "rgba(29, 202, 255, 1)",
-						data: twitter_follower
-					},
-					{
-						label: "googleplus",
-						fill: false,
-						lineTension: 0.1,
-						backgroundColor: "rgba(211, 72, 54, 0.75)",
-						borderColor: "rgba(211, 72, 54, 1)",
-						pointHoverBackgroundColor: "rgba(211, 72, 54, 1)",
-						pointHoverBorderColor: "rgba(211, 72, 54, 1)",
-						data: googleplus_follower
+						data: value
 					}
 				]
 			};
 
-			var ctx = $("#mycanvas");
+			var ctx = $("#total_bmi");
 
 			var LineGraph = new Chart(ctx, {
 				type: 'line',

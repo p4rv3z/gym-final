@@ -22,6 +22,7 @@
 	<div class="row">
 		<div class="col-lg-6" style="text-align: center;">
 			<canvas id="total_bmi" width="400" height="400"></canvas>
+			<script type="text/javascript" src="../assets/javascript/linegraph.js"></script>
 		</div>
 		<div class="col-lg-6" style="text-align: center;">
 			<table class="table table-bordered">
@@ -130,54 +131,3 @@
 	?>
 	</div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!--Graph Script-->
-<script>
-var canvas = document.getElementById('total_bmi');
-var data = {
-    labels: [<?php print json_encode($chart_values);?>],
-    datasets: [
-        {
-            label: "IBM Rating",
-            fill: false,
-            lineTension: 0.1,
-            backgroundColor: "rgba(75,192,192,0.4)",
-            borderColor: "rgba(75,192,192,1)",
-            borderCapStyle: 'butt',
-            borderDash: [],
-            borderDashOffset: 0.0,
-            borderJoinStyle: 'miter',
-            pointBorderColor: "rgba(75,192,192,1)",
-            pointBackgroundColor: "#fff",
-            pointBorderWidth: 1,
-            pointHoverRadius: 5,
-            pointHoverBackgroundColor: "rgba(75,192,192,1)",
-            pointHoverBorderColor: "rgba(220,220,220,1)",
-            pointHoverBorderWidth: 2,
-            pointRadius: 5,
-            pointHitRadius: 10,
-            data: [<?php foreach($chart_values as $key=>$value){echo $value.",";}?>],
-        }
-    ]
-};
-
-var option = {
-	showLines: true
-};
-var myLineChart = Chart.Line(canvas,{
-	data:data,
-  options:option
-});
-</script>
