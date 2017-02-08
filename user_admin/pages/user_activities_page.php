@@ -1,9 +1,13 @@
 <?php
+	if (!empty($email)) {
 		$query = new DatabaseHelper();
 		$sql = "SELECT * FROM `user_activities` WHERE id = (SELECT MAX(id) FROM `user_activities` WHERE email = '$email')";
 		$result = $query->runQuery($sql);
+		if ($result->num_rows>0) {
 		$max_row = $result->fetch_assoc();
-		$bmi_status = calculateBMI($max_row);
+			$bmi_status = calculateBMI($max_row);
+		}
+		}
 		function calculateBMI($max_row){
 		$bmi_height = ($max_row['height']/100);
 		$bmi_weight = $max_row['weight'];
@@ -34,7 +38,7 @@
       				</tr>
     		</thead>
     		<tbody>
-      			<tr class="<?php if ($bmi_status<16) {echo 'danger';}?>">
+      			<tr class="<?php if ($bmi_status<16 && $bmi_status > 0) {echo 'danger';}?>">
         			<td>Severe Thinness</td>
         			<td>< 16</td>
       			</tr>
