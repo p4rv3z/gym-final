@@ -110,6 +110,9 @@ if (isset($_GET['logout'])) {
     			if ($page=='read_message') {
 					include 'pages/read_message_page.php';
     			}
+    			if ($page=='payment') {
+					include 'pages/payment_page.php';
+    			}
     		}else{
     			include 'pages/home.php';
     		}

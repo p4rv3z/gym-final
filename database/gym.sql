@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 02, 2017 at 09:06 PM
+-- Generation Time: Feb 10, 2017 at 08:13 PM
 -- Server version: 10.1.16-MariaDB
 -- PHP Version: 7.0.9
 
@@ -56,7 +56,7 @@ CREATE TABLE `admin_info` (
 --
 
 INSERT INTO `admin_info` (`email`, `name`, `image_name`) VALUES
-('admin@mail.com', 'Muhammad Harun-Or-Roshid', '14859482961105891c5882e80d7965123456.jpg');
+('admin@mail.com', 'Muhammad Harun-Or-Roshid', '148657806026211589b618c422ae9041123456.jpg');
 
 -- --------------------------------------------------------
 
@@ -84,6 +84,60 @@ INSERT INTO `gallery_image_list` (`id`, `image_name`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `messages`
+--
+
+CREATE TABLE `messages` (
+  `id` int(11) NOT NULL,
+  `date` date NOT NULL,
+  `to_email` varchar(32) NOT NULL,
+  `from` varchar(32) NOT NULL,
+  `message` varchar(512) NOT NULL,
+  `status` int(1) NOT NULL DEFAULT '0',
+  `fk_id` int(32) NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `messages`
+--
+
+INSERT INTO `messages` (`id`, `date`, `to_email`, `from`, `message`, `status`, `fk_id`) VALUES
+(1, '2017-02-08', 'md.parvez28@gmail.com', 'admin@mail.com', 'Hi!', 1, 0),
+(4, '2017-02-08', 'admin@mail.com', 'md.parvez28@gmail.com', 'Hi! from user', 1, 0),
+(5, '2017-02-08', 'admin@mail.com', 'md.parvez28@gmail.com', 'THis is from user', 1, 0),
+(6, '2017-02-08', 'md.parvez28@gmail.com', 'md.parvez28@gmail.com', 'hi', 1, 0),
+(8, '2017-02-08', 'md.parvez28@gmail.com', 'admin@mail.com', 'This is from admin reply', 1, 0),
+(9, '2017-02-08', 'admin@mail.com', 'md.parvez28@gmail.com', 'This is from user reply', 1, 0),
+(10, '2017-02-08', 'md.parvez28@gmail.com', 'tuni@gmail.com', 'Hi! I am Tuni.', 1, 0),
+(11, '2017-02-08', 'admin@mail.com', 'tuni@gmail.com', 'Hi! I am Tuni. I am new here.', 1, 0),
+(12, '2017-02-08', 'tuni@gmail.com', 'admin@mail.com', 'welcome', 0, 0),
+(13, '2017-02-08', 'tuni@gmail.com', 'md.parvez28@gmail.com', 'nice to meeting you', 0, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `payment`
+--
+
+CREATE TABLE `payment` (
+  `id` int(11) NOT NULL,
+  `email` varchar(32) NOT NULL,
+  `payment_date` date NOT NULL,
+  `payment_month` date NOT NULL,
+  `plan` varchar(20) NOT NULL,
+  `amount` double NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `payment`
+--
+
+INSERT INTO `payment` (`id`, `email`, `payment_date`, `payment_month`, `plan`, `amount`) VALUES
+(40, 'md.parvez28@gmail.com', '2017-02-10', '2017-02-10', 'pro', 1);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `users`
 --
 
@@ -102,7 +156,8 @@ INSERT INTO `users` (`id`, `email`, `password`) VALUES
 (12, 'firoj@hotmail.com', '8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92'),
 (14, 'nila@live.com', '8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92'),
 (19, 'sudip@gmail.com', '8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92'),
-(34, 'tuni@gmail.com', '8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92');
+(34, 'tuni@gmail.com', '8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92'),
+(35, 'md.parvez28@gmail.com', '8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92');
 
 -- --------------------------------------------------------
 
@@ -127,9 +182,62 @@ CREATE TABLE `users_information` (
 INSERT INTO `users_information` (`email`, `name`, `contact_number`, `date_of_birth`, `gender`, `image_name`, `address`) VALUES
 ('firoj@hotmail.com', 'Firoj Khan', '01749999444', '1990-01-01', 'Male', 'person_3.jpg', 'House 543, Road 12, Rome, Italy'),
 ('jashim@yahoo.com', 'Jashim Uddin', '01821666333', '1971-01-01', 'Male', 'person_2.jpg', 'House 3, Road 34, Berlin, Germany'),
+('md.parvez28@gmail.com', 'Muhammad Harun-Or-Roshid', '01670129830', '1994-04-28', 'Male', '1486456972271455899888c52d6d24102016.jpg', 'House 12, Road 5, Block J, Section 7, Mirpur, Dhaka'),
 ('nila@live.com', 'Nilanjona Nila', '01991144888', '1996-01-01', 'Female', 'person_5.jpg', 'House 35, Road 1, Rangpur, Bangladesh'),
 ('sudip@gmail.com', 'Sudip Sarker', '01771155999', '1992-01-01', 'Male', 'person_4.jpg', 'House 32, Road 5, London, UK'),
 ('tuni@gmail.com', 'Tun Tuni', '01711122211', '1994-01-01', 'Female', 'person_1.jpg', 'House 5, Road 2, Washington, D.C., USA');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users_plan`
+--
+
+CREATE TABLE `users_plan` (
+  `id` int(32) NOT NULL,
+  `email` varchar(32) NOT NULL,
+  `plan` varchar(15) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `users_plan`
+--
+
+INSERT INTO `users_plan` (`id`, `email`, `plan`) VALUES
+(1, 'md.parvez28@gmail.com', 'pro');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user_activities`
+--
+
+CREATE TABLE `user_activities` (
+  `id` int(32) NOT NULL,
+  `date` date NOT NULL,
+  `email` varchar(32) NOT NULL,
+  `height` int(32) NOT NULL,
+  `weight` int(11) NOT NULL,
+  `heart_rate` int(32) NOT NULL,
+  `workout` time NOT NULL,
+  `age` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `user_activities`
+--
+
+INSERT INTO `user_activities` (`id`, `date`, `email`, `height`, `weight`, `heart_rate`, `workout`, `age`) VALUES
+(4, '2017-02-07', 'md.parvez28@gmail.com', 173, 81, 198, '02:30:00', 22),
+(5, '2017-02-07', 'md.parvez28@gmail.com', 173, 80, 198, '02:00:00', 22),
+(7, '2017-02-07', 'md.parvez28@gmail.com', 173, 80, 198, '02:50:00', 22),
+(8, '2017-02-08', 'md.parvez28@gmail.com', 173, 80, 198, '03:00:00', 22),
+(9, '2017-02-08', 'md.parvez28@gmail.com', 173, 79, 198, '02:00:00', 22),
+(12, '2017-02-08', 'md.parvez28@gmail.com', 173, 79, 198, '00:30:00', 22),
+(13, '2017-02-08', 'tuni@gmail.com', 160, 55, 197, '01:03:00', 23),
+(14, '2017-02-08', 'tuni@gmail.com', 160, 54, 197, '02:30:00', 23),
+(15, '2017-02-10', 'md.parvez28@gmail.com', 173, 78, 198, '02:00:00', 22),
+(16, '2017-02-10', 'md.parvez28@gmail.com', 173, 78, 147, '02:30:00', 22);
 
 --
 -- Indexes for dumped tables
@@ -156,6 +264,21 @@ ALTER TABLE `gallery_image_list`
   ADD UNIQUE KEY `image_name` (`image_name`);
 
 --
+-- Indexes for table `messages`
+--
+ALTER TABLE `messages`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `id` (`id`);
+
+--
+-- Indexes for table `payment`
+--
+ALTER TABLE `payment`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `id` (`id`),
+  ADD UNIQUE KEY `payment_month` (`payment_month`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -170,6 +293,18 @@ ALTER TABLE `users_information`
   ADD UNIQUE KEY `image_path` (`image_name`);
 
 --
+-- Indexes for table `users_plan`
+--
+ALTER TABLE `users_plan`
+  ADD PRIMARY KEY (`id`,`email`);
+
+--
+-- Indexes for table `user_activities`
+--
+ALTER TABLE `user_activities`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -182,12 +317,32 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `gallery_image_list`
 --
 ALTER TABLE `gallery_image_list`
-  MODIFY `id` int(32) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(32) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+--
+-- AUTO_INCREMENT for table `messages`
+--
+ALTER TABLE `messages`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+--
+-- AUTO_INCREMENT for table `payment`
+--
+ALTER TABLE `payment`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(32) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `id` int(32) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+--
+-- AUTO_INCREMENT for table `users_plan`
+--
+ALTER TABLE `users_plan`
+  MODIFY `id` int(32) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `user_activities`
+--
+ALTER TABLE `user_activities`
+  MODIFY `id` int(32) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

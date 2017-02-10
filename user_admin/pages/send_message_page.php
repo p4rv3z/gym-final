@@ -29,7 +29,7 @@
 <h2 class="content-subhead" style="text-align: center;">Message</h2>
 	<div style="text-align: right;">
 	<a href="message.php">
-    <button type="submit" class="btn btn-danger" name="send_message">Cancel</button>
+    <button type="submit" class="btn btn-danger" name="send_message">Back</button>
     </a>
     </div>
 <hr style="border-style: inset;border-width: 1px;">
