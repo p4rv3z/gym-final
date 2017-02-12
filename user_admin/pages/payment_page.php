@@ -2,6 +2,8 @@
 $plan = "";
 $plan_price = '';
 $error_msg = '';
+$total_payment = '';
+$status = '';
 $array = array('starter'=>9, 'basic'=>27, 'pro'=>74, 'unlimited'=>140 );
 if (!empty($email)) {
 		$plan_status = new DatabaseHelper();
@@ -25,10 +27,22 @@ if (!empty($email)) {
 			if (!empty($from_date) && !empty($to_date) && !empty($today) && !empty($plan) && !empty($amount)) {
 				$months = getMonth($from_date,$to_date);
 				$total_amount  = $months*$plan_price;
-				echo "php".$total_amount;
-				echo "string.$amount";
 				if($total_amount==$amount){
-					echo ($total_amount/$months);
+					//echo ($total_amount/$months);
+					$temp = new DateTime($from_date);
+					$query = new DatabaseHelper();
+					for($i = 0;$i < $months;$i++){
+						$temp = $temp->format('Y-m-d');
+						$query = new DatabaseHelper();
+						$sql = "INSERT INTO `payment`(`email`, `payment_date`, `payment_month`, `plan`, `amount`) VALUES ('$email','$today','$temp','$plan','$plan_price')";
+						$result = $query->insertQuery($sql);
+					if ($result) {
+						//header("refresh: 0");
+					}
+					$temp = new DateTime($temp);
+					$temp->add(new DateInterval("P1M"));
+					}
+					header("refresh: 0");
 				}else{
 					echo 'error';
 				}
@@ -36,13 +50,44 @@ if (!empty($email)) {
 				$error_msg = "Field can't be empty";
 			}
 		}
+		$query = new DatabaseHelper();
+		$sql = "SELECT SUM(amount) AS total_pay FROM payment WHERE email = '$email'";
+		$total_pay = $query->runQuery($sql);
+		$row_pay = $total_pay->fetch_assoc();
+		$total_payment = $row_pay['total_pay'];
+
+			$query = new DatabaseHelper();
+			$sql = "SELECT * FROM `payment` WHERE email = '$email' ORDER BY id DESC";
+			$result = $query->runQuery($sql);
+			
+			while($row=$result->fetch_array()){
+				$pay_month = new DateTime($row['payment_month']);
+				if (checkDateValidation($pay_month)) {
+					$status = 'ACTIVE';
+					break;
+				}else{
+					$status = '';
+				}
+			}
+
 }
 function getMonth($from,$to){
 	$from_date = new DateTime($from);
 	$to_date = new DateTime($to);
-	$diff = $from_date->diff($to_date);
-	$months = ($diff->y * 12) + $diff->m;
-	return $months+1;
+	$f_y = $from_date->format('Y');
+	$f_m = $from_date->format('m');
+	$t_y = $to_date->format('Y');
+	$t_m = $to_date->format('m');
+	$months = ((($t_y-$f_y)*12)+($t_m-$f_m))+1;
+	return $months;
+}
+function checkDateValidation($pay_month){
+	$to_day = new DateTime('today');
+		if($to_day->format('m') == $pay_month->format('m')) {
+   			return TRUE;
+		} else {
+    		return FALSE; 
+		} 
 }
 ?>
 <div>
@@ -158,7 +203,7 @@ function getMonth($from,$to){
 
 			var from_date = new Date(document.getElementById("from_date").value);
 			var to_date = new Date(document.getElementById("to_date").value);
-			var total_months = (to_date.getFullYear() - from_date.getFullYear())*12 + (to_date.getMonth() - from_date.getMonth())+1;
+			var total_months = (((to_date.getFullYear() - from_date.getFullYear())*12) + (to_date.getMonth() - from_date.getMonth()))+1;
 			if (total_months>0) {
 				var x  = price[plan];
 				var y = total_months;

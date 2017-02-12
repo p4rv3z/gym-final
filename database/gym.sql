@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 10, 2017 at 08:13 PM
+-- Generation Time: Feb 12, 2017 at 08:45 PM
 -- Server version: 10.1.16-MariaDB
 -- PHP Version: 7.0.9
 
@@ -61,6 +61,26 @@ INSERT INTO `admin_info` (`email`, `name`, `image_name`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `feedback`
+--
+
+CREATE TABLE `feedback` (
+  `id` int(32) NOT NULL,
+  `email` varchar(32) NOT NULL,
+  `title` varchar(200) NOT NULL,
+  `message` varchar(500) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `feedback`
+--
+
+INSERT INTO `feedback` (`id`, `email`, `title`, `message`) VALUES
+(4, 'md.parvez28@gmail.com', 'Good very Good', 'This is Very Good Gym.');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `gallery_image_list`
 --
 
@@ -111,7 +131,10 @@ INSERT INTO `messages` (`id`, `date`, `to_email`, `from`, `message`, `status`, `
 (10, '2017-02-08', 'md.parvez28@gmail.com', 'tuni@gmail.com', 'Hi! I am Tuni.', 1, 0),
 (11, '2017-02-08', 'admin@mail.com', 'tuni@gmail.com', 'Hi! I am Tuni. I am new here.', 1, 0),
 (12, '2017-02-08', 'tuni@gmail.com', 'admin@mail.com', 'welcome', 0, 0),
-(13, '2017-02-08', 'tuni@gmail.com', 'md.parvez28@gmail.com', 'nice to meeting you', 0, 0);
+(13, '2017-02-08', 'tuni@gmail.com', 'md.parvez28@gmail.com', 'nice to meeting you', 0, 0),
+(14, '2017-02-12', 'sojib@live.com', 'admin@mail.com', 'Hi', 0, 0),
+(15, '2017-02-12', 'md.sojib@live.com', 'admin@mail.com', 'Hi!', 1, 0),
+(16, '2017-02-12', 'admin@mail.com', 'md.sojib@live.com', 'Hi! Admin', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -133,7 +156,7 @@ CREATE TABLE `payment` (
 --
 
 INSERT INTO `payment` (`id`, `email`, `payment_date`, `payment_month`, `plan`, `amount`) VALUES
-(40, 'md.parvez28@gmail.com', '2017-02-10', '2017-02-10', 'pro', 1);
+(72, 'md.parvez28@gmail.com', '2017-02-12', '2017-02-01', 'pro', 74);
 
 -- --------------------------------------------------------
 
@@ -157,7 +180,9 @@ INSERT INTO `users` (`id`, `email`, `password`) VALUES
 (14, 'nila@live.com', '8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92'),
 (19, 'sudip@gmail.com', '8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92'),
 (34, 'tuni@gmail.com', '8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92'),
-(35, 'md.parvez28@gmail.com', '8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92');
+(35, 'md.parvez28@gmail.com', '8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92'),
+(36, 'md.sobuj@gmail.com', '8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92'),
+(37, 'md.sojib@live.com', 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855');
 
 -- --------------------------------------------------------
 
@@ -183,6 +208,7 @@ INSERT INTO `users_information` (`email`, `name`, `contact_number`, `date_of_bir
 ('firoj@hotmail.com', 'Firoj Khan', '01749999444', '1990-01-01', 'Male', 'person_3.jpg', 'House 543, Road 12, Rome, Italy'),
 ('jashim@yahoo.com', 'Jashim Uddin', '01821666333', '1971-01-01', 'Male', 'person_2.jpg', 'House 3, Road 34, Berlin, Germany'),
 ('md.parvez28@gmail.com', 'Muhammad Harun-Or-Roshid', '01670129830', '1994-04-28', 'Male', '1486456972271455899888c52d6d24102016.jpg', 'House 12, Road 5, Block J, Section 7, Mirpur, Dhaka'),
+('md.sojib@live.com', 'Sojib Ahamed', '01821666321', '1994-04-28', 'Male', '148692039174558a09ac7845108553123456.jpg', 'House- 5, Road 12, Mirpur, Dhaka, Bangladesh'),
 ('nila@live.com', 'Nilanjona Nila', '01991144888', '1996-01-01', 'Female', 'person_5.jpg', 'House 35, Road 1, Rangpur, Bangladesh'),
 ('sudip@gmail.com', 'Sudip Sarker', '01771155999', '1992-01-01', 'Male', 'person_4.jpg', 'House 32, Road 5, London, UK'),
 ('tuni@gmail.com', 'Tun Tuni', '01711122211', '1994-01-01', 'Female', 'person_1.jpg', 'House 5, Road 2, Washington, D.C., USA');
@@ -204,7 +230,9 @@ CREATE TABLE `users_plan` (
 --
 
 INSERT INTO `users_plan` (`id`, `email`, `plan`) VALUES
-(1, 'md.parvez28@gmail.com', 'pro');
+(1, 'md.parvez28@gmail.com', 'pro'),
+(2, 'md.sobuj@gmail.com', 'pro'),
+(3, 'md.sojib@live.com', 'basic');
 
 -- --------------------------------------------------------
 
@@ -237,7 +265,10 @@ INSERT INTO `user_activities` (`id`, `date`, `email`, `height`, `weight`, `heart
 (13, '2017-02-08', 'tuni@gmail.com', 160, 55, 197, '01:03:00', 23),
 (14, '2017-02-08', 'tuni@gmail.com', 160, 54, 197, '02:30:00', 23),
 (15, '2017-02-10', 'md.parvez28@gmail.com', 173, 78, 198, '02:00:00', 22),
-(16, '2017-02-10', 'md.parvez28@gmail.com', 173, 78, 147, '02:30:00', 22);
+(16, '2017-02-10', 'md.parvez28@gmail.com', 173, 78, 147, '02:30:00', 22),
+(17, '2017-02-12', 'md.sojib@live.com', 173, 75, 150, '02:00:00', 22),
+(18, '2017-02-12', 'md.sojib@live.com', 173, 74, 198, '02:30:00', 22),
+(19, '2017-02-12', 'md.sojib@live.com', 174, 74, 198, '02:30:00', 22);
 
 --
 -- Indexes for dumped tables
@@ -255,6 +286,13 @@ ALTER TABLE `admin`
 ALTER TABLE `admin_info`
   ADD PRIMARY KEY (`email`),
   ADD UNIQUE KEY `image_name` (`image_name`);
+
+--
+-- Indexes for table `feedback`
+--
+ALTER TABLE `feedback`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `email` (`email`);
 
 --
 -- Indexes for table `gallery_image_list`
@@ -314,6 +352,11 @@ ALTER TABLE `user_activities`
 ALTER TABLE `admin`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
+-- AUTO_INCREMENT for table `feedback`
+--
+ALTER TABLE `feedback`
+  MODIFY `id` int(32) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+--
 -- AUTO_INCREMENT for table `gallery_image_list`
 --
 ALTER TABLE `gallery_image_list`
@@ -322,27 +365,27 @@ ALTER TABLE `gallery_image_list`
 -- AUTO_INCREMENT for table `messages`
 --
 ALTER TABLE `messages`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 --
 -- AUTO_INCREMENT for table `payment`
 --
 ALTER TABLE `payment`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=73;
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(32) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `id` int(32) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 --
 -- AUTO_INCREMENT for table `users_plan`
 --
 ALTER TABLE `users_plan`
-  MODIFY `id` int(32) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(32) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `user_activities`
 --
 ALTER TABLE `user_activities`
-  MODIFY `id` int(32) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(32) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

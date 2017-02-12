@@ -113,8 +113,11 @@ if (isset($_GET['logout'])) {
     			if ($page=='payment') {
 					include 'pages/payment_page.php';
     			}
+    			if ($page=='feedback') {
+					include 'pages/user_feedback_page.php';
+    			}
     		}else{
-    			include 'pages/home.php';
+    			include 'pages/user_activities_page.php';
     		}
     	?>
     </div>

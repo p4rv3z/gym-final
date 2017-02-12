@@ -24,6 +24,7 @@
                 <li class="pure-menu-item"><a href="user_activities.php" class="pure-menu-link">Daily Activities</a></li>
                 <li class="pure-menu-item"><a href="message.php" class="pure-menu-link">Message</a></li>
                 <li class="pure-menu-item"><a href="payment.php" class="pure-menu-link">Payment</a></li>
+                <li class="pure-menu-item"><a href="user_feedback.php" class="pure-menu-link">Feedback</a></li>
             </ul>
         </div>
     </div>
