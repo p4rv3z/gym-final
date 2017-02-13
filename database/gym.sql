@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 12, 2017 at 08:45 PM
+-- Generation Time: Feb 13, 2017 at 03:47 PM
 -- Server version: 10.1.16-MariaDB
 -- PHP Version: 7.0.9
 
@@ -157,6 +157,30 @@ CREATE TABLE `payment` (
 
 INSERT INTO `payment` (`id`, `email`, `payment_date`, `payment_month`, `plan`, `amount`) VALUES
 (72, 'md.parvez28@gmail.com', '2017-02-12', '2017-02-01', 'pro', 74);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `trainer`
+--
+
+CREATE TABLE `trainer` (
+  `id` int(32) NOT NULL,
+  `email` varchar(32) NOT NULL,
+  `name` varchar(32) NOT NULL,
+  `category` varchar(50) NOT NULL,
+  `image_name` varchar(100) NOT NULL,
+  `details` varchar(1024) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `trainer`
+--
+
+INSERT INTO `trainer` (`id`, `email`, `name`, `category`, `image_name`, `details`) VALUES
+(8, 'john@mail.com', 'Body Trainer', 'John Doe', '14869962391143258a1c30f0dc4f8013trainer-1.jpg', 'Body Trainer'),
+(9, 'jamessmith@mail.com', 'Swimming Trainer', 'James Smith', '14869963043056658a1c350831612873trainer-2.jpg', 'Swimming Trainer'),
+(10, 'kaprelianhue@mail.com', 'Certified Personal Trainer', 'Kaprelian Hue', '1486996360752158a1c388371da5536trainer-3.jpg', 'Certified Personal Trainer');
 
 -- --------------------------------------------------------
 
@@ -317,6 +341,14 @@ ALTER TABLE `payment`
   ADD UNIQUE KEY `payment_month` (`payment_month`);
 
 --
+-- Indexes for table `trainer`
+--
+ALTER TABLE `trainer`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `image_name` (`image_name`),
+  ADD UNIQUE KEY `email` (`email`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -371,6 +403,11 @@ ALTER TABLE `messages`
 --
 ALTER TABLE `payment`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=73;
+--
+-- AUTO_INCREMENT for table `trainer`
+--
+ALTER TABLE `trainer`
+  MODIFY `id` int(32) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT for table `users`
 --
