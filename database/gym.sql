@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 13, 2017 at 03:47 PM
+-- Generation Time: Feb 13, 2017 at 09:07 PM
 -- Server version: 10.1.16-MariaDB
 -- PHP Version: 7.0.9
 
@@ -134,7 +134,12 @@ INSERT INTO `messages` (`id`, `date`, `to_email`, `from`, `message`, `status`, `
 (13, '2017-02-08', 'tuni@gmail.com', 'md.parvez28@gmail.com', 'nice to meeting you', 0, 0),
 (14, '2017-02-12', 'sojib@live.com', 'admin@mail.com', 'Hi', 0, 0),
 (15, '2017-02-12', 'md.sojib@live.com', 'admin@mail.com', 'Hi!', 1, 0),
-(16, '2017-02-12', 'admin@mail.com', 'md.sojib@live.com', 'Hi! Admin', 0, 0);
+(16, '2017-02-12', 'admin@mail.com', 'md.sojib@live.com', 'Hi! Admin', 1, 0),
+(18, '2017-02-13', 'admin@mail.com', 'parvez28@gmail.com', 'This message is  from contact content.', 1, 0),
+(19, '2017-02-13', 'admin@mail.com', 'parvez28@gmail.com', 'This message is  from contact content.Anonymous:<br>Name: ABC', 1, 0),
+(20, '2017-02-13', 'admin@mail.com', 'parvez28@gmail.com', 'This is testing msg.Anonymous:<br>Name: Parvez', 1, 0),
+(21, '2017-02-13', 'admin@mail.com', 'parvez28@gmail.com', 'This is testing msg.Anonymous:<br>Name: Parvez', 1, 0),
+(22, '2017-02-13', 'admin@mail.com', 'parvez28@gmail.com', 'hi{Anonymous->Name: Parvez}', 1, 0);
 
 -- --------------------------------------------------------
 
@@ -156,7 +161,10 @@ CREATE TABLE `payment` (
 --
 
 INSERT INTO `payment` (`id`, `email`, `payment_date`, `payment_month`, `plan`, `amount`) VALUES
-(72, 'md.parvez28@gmail.com', '2017-02-12', '2017-02-01', 'pro', 74);
+(77, 'jashim@yahoo.com', '2017-02-13', '2017-02-01', 'pro', 74),
+(78, 'firoj@hotmail.com', '2017-02-13', '2017-02-01', 'basic', 27),
+(79, 'nila@live.com', '2017-02-13', '2017-01-01', 'unlimited', 140),
+(80, 'jashim@yahoo.com', '2017-02-13', '2017-03-01', 'basic', 27);
 
 -- --------------------------------------------------------
 
@@ -199,14 +207,13 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `email`, `password`) VALUES
-(11, 'jashim@yahoo.com', '8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92'),
+(11, 'jashim@yahoo.com', 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'),
 (12, 'firoj@hotmail.com', '8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92'),
 (14, 'nila@live.com', '8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92'),
 (19, 'sudip@gmail.com', '8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92'),
 (34, 'tuni@gmail.com', '8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92'),
 (35, 'md.parvez28@gmail.com', '8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92'),
-(36, 'md.sobuj@gmail.com', '8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92'),
-(37, 'md.sojib@live.com', 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855');
+(36, 'md.sobuj@gmail.com', '8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92');
 
 -- --------------------------------------------------------
 
@@ -230,7 +237,7 @@ CREATE TABLE `users_information` (
 
 INSERT INTO `users_information` (`email`, `name`, `contact_number`, `date_of_birth`, `gender`, `image_name`, `address`) VALUES
 ('firoj@hotmail.com', 'Firoj Khan', '01749999444', '1990-01-01', 'Male', 'person_3.jpg', 'House 543, Road 12, Rome, Italy'),
-('jashim@yahoo.com', 'Jashim Uddin', '01821666333', '1971-01-01', 'Male', 'person_2.jpg', 'House 3, Road 34, Berlin, Germany'),
+('jashim@yahoo.com', 'Jashim Uddin', '01821666333', '1971-01-01', 'Other', 'person_2.jpg', 'House 3, Road 34, Berlin, Germany'),
 ('md.parvez28@gmail.com', 'Muhammad Harun-Or-Roshid', '01670129830', '1994-04-28', 'Male', '1486456972271455899888c52d6d24102016.jpg', 'House 12, Road 5, Block J, Section 7, Mirpur, Dhaka'),
 ('md.sojib@live.com', 'Sojib Ahamed', '01821666321', '1994-04-28', 'Male', '148692039174558a09ac7845108553123456.jpg', 'House- 5, Road 12, Mirpur, Dhaka, Bangladesh'),
 ('nila@live.com', 'Nilanjona Nila', '01991144888', '1996-01-01', 'Female', 'person_5.jpg', 'House 35, Road 1, Rangpur, Bangladesh'),
@@ -256,7 +263,11 @@ CREATE TABLE `users_plan` (
 INSERT INTO `users_plan` (`id`, `email`, `plan`) VALUES
 (1, 'md.parvez28@gmail.com', 'pro'),
 (2, 'md.sobuj@gmail.com', 'pro'),
-(3, 'md.sojib@live.com', 'basic');
+(3, 'md.sojib@live.com', 'basic'),
+(5, 'firoj@hotmail.com', 'basic'),
+(6, 'nila@live.com', 'unlimited'),
+(7, 'sudip@gmail.com', 'starter'),
+(10, 'jashim@yahoo.com', 'basic');
 
 -- --------------------------------------------------------
 
@@ -337,8 +348,7 @@ ALTER TABLE `messages`
 --
 ALTER TABLE `payment`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `id` (`id`),
-  ADD UNIQUE KEY `payment_month` (`payment_month`);
+  ADD UNIQUE KEY `id` (`id`);
 
 --
 -- Indexes for table `trainer`
@@ -366,7 +376,8 @@ ALTER TABLE `users_information`
 -- Indexes for table `users_plan`
 --
 ALTER TABLE `users_plan`
-  ADD PRIMARY KEY (`id`,`email`);
+  ADD PRIMARY KEY (`id`,`email`),
+  ADD UNIQUE KEY `email` (`email`);
 
 --
 -- Indexes for table `user_activities`
@@ -397,12 +408,12 @@ ALTER TABLE `gallery_image_list`
 -- AUTO_INCREMENT for table `messages`
 --
 ALTER TABLE `messages`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 --
 -- AUTO_INCREMENT for table `payment`
 --
 ALTER TABLE `payment`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=73;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=81;
 --
 -- AUTO_INCREMENT for table `trainer`
 --
@@ -417,7 +428,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `users_plan`
 --
 ALTER TABLE `users_plan`
-  MODIFY `id` int(32) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(32) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT for table `user_activities`
 --

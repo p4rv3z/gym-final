@@ -109,6 +109,9 @@ if (isset($_GET['logout'])) {
     			if ($page=='add_trainer') {
 					include 'pages/add_trainer_page.php';
     			}
+    			if ($page=='user_view_profile') {
+					include 'pages/user_profile_view_page.php';
+    			}
     		}else{
     			include 'pages/home.php';
     		}

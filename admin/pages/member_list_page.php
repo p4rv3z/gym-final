@@ -53,7 +53,7 @@
       		<p><?php echo substr($single_row['contact_number'],0,16);?></p>
     		</div>
     		<div class="col-sm-2">
-    		<a href="?view=<?php echo $single_row['email'];?>" style="padding: 5px"><span class="glyphicon glyphicon-pencil"></span></a>
+    		<a href="user_view_profile.php?view=<?php echo $single_row['email'];?>" style="padding: 5px"><span class="glyphicon glyphicon-pencil"></span></a>
       		<a href="?delete=<?php echo $single_row['email'];?>" style="padding: 5px"><span class="glyphicon glyphicon-trash"></span></a>
     		</div>
 

@@ -18,7 +18,7 @@
         <!--[if gt IE 8]><!-->
             <link rel="stylesheet" href="../assets/css/side-menu.css">
         <!--<![endif]-->
-	<title>Admin Panel</title>
+	<title>User Panel</title>
 	<script src="../assets/jquery/jquery-3.1.1.min.js"></script>
 	<script src="../assets/bootstrap/js/bootstrap.min.js"></script>
 	<script src="../assets/javascript/chart.js"></script>
@@ -115,6 +115,9 @@ if (isset($_GET['logout'])) {
     			}
     			if ($page=='feedback') {
 					include 'pages/user_feedback_page.php';
+    			}
+    			if ($page=='plan') {
+					include 'pages/plan_page.php';
     			}
     		}else{
     			include 'pages/user_activities_page.php';

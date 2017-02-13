@@ -110,11 +110,12 @@
 				</div>
 			</div>
 			<div class="row">
-			
+
 <?php
 		$table_name = "trainer";
 		$get_trainer_info = new DatabaseHelper();
 		$result = $get_trainer_info->getAllData($table_name);
+		$i = 1;
 		while($row=$result->fetch_array()){
 ?>
 				<div class="col-md-4 animate-box">
@@ -129,6 +130,10 @@
 					</a>
 				</div>
 <?php
+if($i == 3){
+break;
+}
+$i++;
 }
 ?>
 

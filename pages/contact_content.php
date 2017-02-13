@@ -1,3 +1,28 @@
+<?php
+if (isset($_POST['send'])) {
+	$to_email = "admin@mail.com";
+	$un_name = $_POST['name'];
+	$un_email = trim($_POST['email']);
+	$un_message = trim($_POST['message']);
+	$fk_id = 0;
+	$error_msg = '';
+	if (!empty($un_name)&&!empty($un_email)&&!empty($un_email)) {
+			$dat = trim(date('Y-m-d'));
+			$un_message = $un_message."[{Anonymous->Name: $un_name}]";
+			$query = new DatabaseHelper();
+			$sql = "INSERT INTO `messages`(`date`, `to_email`, `from`, `message`, `fk_id`) VALUES ('$dat','$to_email','$un_email','$un_message','$fk_id')";
+          	$result=$query->insertQuery($sql);
+          	if ($result) {
+          		$error_msg = "Message sent!";
+          		header("refresh: 2");
+          	}else{
+          		$error_msg = "Message sending failed!!";
+          	}
+	}else{
+		$error_msg = "Field can't be empty!!!";
+	}
+}
+?>
 <div class="fh5co-contact animate-box">
 		<div class="container">
 			<div class="row">
@@ -18,28 +43,31 @@
 					</ul>
 				</div>
 				<div class="col-md-8 col-md-push-1 col-sm-12 col-sm-push-0 col-xs-12 col-xs-push-0">
+				<form class="form-horizontal" method="POST" action="" enctype="multipart/form-data">
 					<div class="row">
+					<?php if (!empty($error_msg)) {echo "<p style='color:red;'>$error_msg</p>";}?>
 						<div class="col-md-6">
 							<div class="form-group">
-								<input class="form-control" placeholder="Name" type="text">
+								<input class="form-control" placeholder="Name" type="text" name="name">
 							</div>
 						</div>
 						<div class="col-md-6">
 							<div class="form-group">
-								<input class="form-control" placeholder="Email" type="text">
+								<input class="form-control" placeholder="Email" type="text" name="email">
 							</div>
 						</div>
 						<div class="col-md-12">
 							<div class="form-group">
-								<textarea name="" class="form-control" id="" cols="30" rows="7" placeholder="Message"></textarea>
+								<textarea class="form-control" cols="30" rows="7" placeholder="Message" name="message"></textarea>
 							</div>
 						</div>
 						<div class="col-md-12">
 							<div class="form-group">
-								<input value="Send Message" class="btn btn-primary" type="submit">
+								<input value="Send Message" class="btn btn-primary" type="submit" name="send">
 							</div>
 						</div>
 					</div>
+				</form>
 				</div>
 			</div>
 		</div>	
