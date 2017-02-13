@@ -7,72 +7,26 @@
 				</div>
 			</div>
 			<div class="row">
+<?php
+		$table_name = "trainer";
+		$get_trainer_info = new DatabaseHelper();
+		$result = $get_trainer_info->getAllData($table_name);
+		while($row=$result->fetch_array()){
+?>
 				<div class="col-md-4 animate-box">
-					<a href="#" class="item-grid text-center">
-						<div class="image" style="background-image: url(assets/front_end_assets/images/trainer-1.jpg)"></div>
+					<a href="<?php echo $row['email'];?>" class="item-grid text-center">
+						<div class="image" style="background-image: url(images/<?php echo $row['image_name'];?>)"></div>
 						<div class="v-align">
 							<div class="v-align-middle">
-								<h3 class="title">John Doe</h3>
-								<h4 class="category">Body Trainer</h4>
+								<h3 class="title"><?php echo $row['name'];?></h3>
+								<h4 class="category"><?php echo $row['category'];?></h4>
 							</div>
 						</div>
 					</a>
 				</div>
-				<div class="col-md-4 animate-box">
-					<a href="#" class="item-grid text-center">
-						<div class="image" style="background-image: url(assets/front_end_assets/images/trainer-2.jpg)"></div>
-						<div class="v-align">
-							<div class="v-align-middle">
-								<h3 class="title">James Smith</h3>
-								<h4 class="category">Swimming Trainer</h4>
-							</div>
-						</div>
-					</a>
-				</div>
-				<div class="col-md-4 animate-box">
-					<a href="#" class="item-grid text-center">
-						<div class="image" style="background-image: url(assets/front_end_assets/images/trainer-3.jpg)"></div>
-						<div class="v-align">
-							<div class="v-align-middle">
-								<h3 class="title">Kaprelian Hue</h3>
-								<h4 class="category">Certified Personal Trainer</h4>
-							</div>
-						</div>
-					</a>
-				</div>
-				<div class="col-md-4 animate-box">
-					<a href="#" class="item-grid text-center">
-						<div class="image" style="background-image: url(assets/front_end_assets/images/trainer-1.jpg)"></div>
-						<div class="v-align">
-							<div class="v-align-middle">
-								<h3 class="title">John Doe</h3>
-								<h4 class="category">Body Trainer</h4>
-							</div>
-						</div>
-					</a>
-				</div>
-				<div class="col-md-4 animate-box">
-					<a href="#" class="item-grid text-center">
-						<div class="image" style="background-image: url(assets/front_end_assets/images/trainer-2.jpg)"></div>
-						<div class="v-align">
-							<div class="v-align-middle">
-								<h3 class="title">James Smith</h3>
-								<h4 class="category">Swimming Trainer</h4>
-							</div>
-						</div>
-					</a>
-				</div>
-				<div class="col-md-4 animate-box">
-					<a href="#" class="item-grid text-center">
-						<div class="image" style="background-image: url(assets/front_end_assets/images/trainer-3.jpg)"></div>
-						<div class="v-align">
-							<div class="v-align-middle">
-								<h3 class="title">Kaprelian Hue</h3>
-								<h4 class="category">Certified Personal Trainer</h4>
-							</div>
-						</div>
-					</a>
-				</div>
+<?php
+}
+?>
 				<div class="col-md-12 text-center animate-box">
 					<p><a href="#" class="btn btn-primary with-arrow">View Details <i class="icon-arrow-right"></i></a></p>
 				</div>

@@ -23,6 +23,7 @@
             <ul class="pure-menu-list">
                 <li class="pure-menu-item"><a href="account.php" class="pure-menu-link">Account</a></li>
                 <li class="pure-menu-item"><a href="member_list.php" class="pure-menu-link">Member</a></li>
+                <li class="pure-menu-item"><a href="trainer.php" class="pure-menu-link">Trainer</a></li>
                 <li class="pure-menu-item"><a href="gallery.php" class="pure-menu-link">Gallery</a></li>
                 <li class="pure-menu-item"><a href="message.php" class="pure-menu-link">Message</a></li>
             </ul>

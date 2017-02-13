@@ -1,0 +1,52 @@
+
+	<div class="input-group">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+    <input type="email" class="form-control input-lg" name="email" placeholder="Email" value="<?php if(!empty($email))echo $email;?>" disabled>
+  	</div><br>
+
+  <div class="input-group">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-phone-alt"></i></span>
+    <input type="number" class="form-control input-lg" name="contact_number" placeholder="Contact Number" value="<?php if(!empty($contact_number)){echo $contact_number;}?>">
+    </div><br>
+
+  <div class="input-group">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+    <input type="date" class="form-control input-lg" name="date_of_birth" placeholder="Date of Birth" value="<?php if(!empty($date_of_birth)){echo $date_of_birth;}?>">
+    </div><br>
+
+    <div class="input-group">
+      <div class="row">
+        <div class="col-lg-12" style="font-weight:bold;">
+          Select you Gender:
+          <div>
+      </div>
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="radio-inline">
+            <label><input type="radio" name="gender" <?php if($gender=='Male'){echo 'checked';}?> value="Male">Male</label>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="radio-inline">
+            <label><input type="radio" name="gender" <?php if($gender=='Female'){echo 'checked';}?> value="Female">Female</label>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="radio-inline">
+            <label><input type="radio" name="gender" <?php if($gender=='Other'){echo 'checked';}?> value="Other">Other</label>
+          </div>
+        </div>
+      </div>
+      </div>
+      </div>
+    </div><br>
+
+  <div class="input-group">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+    <input type="address" class="form-control input-lg" name="address" placeholder="Current Address" value="<?php if(!empty($address)){echo $address;}?>">
+    </div><br>
+
+	<div class="input-group">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+    <input type="password" class="form-control input-lg" name="password" placeholder="Password">
+  	</div><br>

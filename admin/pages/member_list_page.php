@@ -34,12 +34,12 @@
 		$result = $get_user_info->getAllData($user_table);
 		$i=0;
 		while($row=$result->fetch_array()){
-			$i++;
+			
 			$single_row = $get_user_info->retrieveData($user_info_table,trim($row['email']));
 			if (!empty($single_row)) {
 			
 	?>
-		<div class="row" style="border: 1px;padding: 10px;<?php if($i%2==0){echo 'background-color: #D3D6C5;';}?>">
+		<div class="row" style="border: 1px;padding: 10px;<?php if($i%2==0){echo 'background-color: #D3D6C5;';}else{echo 'background-color: white;';}?>">
 			<div class="col-sm-1" style="text-align: center;">
       		<img src="../images/<?php echo $single_row['image_name']?>" style="width: 25px;height: auto;">
     		</div>
@@ -60,6 +60,7 @@
 		</div>
 		<?php
 				}
+				$i++;
 			}
 			
 		?>

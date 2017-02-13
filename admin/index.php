@@ -103,6 +103,12 @@ if (isset($_GET['logout'])) {
     			if ($page=='send_message') {
 					include 'pages/send_message_page.php';
     			}
+    			if ($page=='trainer') {
+					include 'pages/trainer_page.php';
+    			}
+    			if ($page=='add_trainer') {
+					include 'pages/add_trainer_page.php';
+    			}
     		}else{
     			include 'pages/home.php';
     		}
