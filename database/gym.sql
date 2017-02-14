@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 13, 2017 at 09:07 PM
+-- Generation Time: Feb 14, 2017 at 03:03 PM
 -- Server version: 10.1.16-MariaDB
 -- PHP Version: 7.0.9
 
@@ -164,7 +164,8 @@ INSERT INTO `payment` (`id`, `email`, `payment_date`, `payment_month`, `plan`, `
 (77, 'jashim@yahoo.com', '2017-02-13', '2017-02-01', 'pro', 74),
 (78, 'firoj@hotmail.com', '2017-02-13', '2017-02-01', 'basic', 27),
 (79, 'nila@live.com', '2017-02-13', '2017-01-01', 'unlimited', 140),
-(80, 'jashim@yahoo.com', '2017-02-13', '2017-03-01', 'basic', 27);
+(80, 'jashim@yahoo.com', '2017-02-13', '2017-03-01', 'basic', 27),
+(81, 'md.parvez28@gmail.com', '2017-02-14', '2017-02-01', 'pro', 74);
 
 -- --------------------------------------------------------
 
@@ -413,7 +414,7 @@ ALTER TABLE `messages`
 -- AUTO_INCREMENT for table `payment`
 --
 ALTER TABLE `payment`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=81;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=82;
 --
 -- AUTO_INCREMENT for table `trainer`
 --
