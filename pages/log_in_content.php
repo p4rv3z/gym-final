@@ -51,12 +51,17 @@ if (!empty($_SESSION["user_email"]) && !empty($_SESSION["user_password"])) {
 <div class="fh5co-contact animate-box">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-12  animate-box">
+				<div class="row  animate-box">
+					<div class="col-md-3"></div>
+					<div class="col-md-6">
 					<u><h2>Provide correct User Name and Password</h2></u>
 					<br><br>
-
+					</div>
+					<div class="col-md-3"></div>
 				</div>
-				<div class="col-md-6 ">
+				<div class="row">
+				</div>
+				<div class="col-md-12">
 				<form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" autocomplete="off"> 
            		<?php if($error==101){
             		echo "<p class = 'error'>Email or password not match.</p>";
@@ -65,21 +70,33 @@ if (!empty($_SESSION["user_email"]) && !empty($_SESSION["user_password"])) {
             		}
             		?>
 					<div class="row">
+						<div class="row">
+						<div class="col-md-3"></div>
 						<div class="col-md-6">
 							<div class="form-group">
 								<input class="form-control" placeholder="Email" type="text" name="email">
 							</div>
 						</div> 
+						<div class="col-md-3"></div>
+						</div>
+
+						<div class="row">
+						<div class="col-md-3"></div>
 						<div class="col-md-6">
 							<div class="form-group">
 								<input class="form-control" placeholder="Password" type="password" name="password">
 							</div>
 						</div>
-						
-						<div class="col-md-12">
+						<div class="col-md-3"></div>
+						</div>
+
+						<div class="row">
+							<div class="col-md-3"></div>
+							<div class="col-md-6">
 							<div class="form-group">
 								<input value="Log In" class="btn-primary" type="submit" name="login">
-							</div>
+							</div></div>
+							<div class="col-md-3"></div>
 						</div>
 					</div>
 				</form>

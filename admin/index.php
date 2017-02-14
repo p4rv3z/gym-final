@@ -21,7 +21,7 @@
 	<title>Admin Panel</title>
 	<script src="../assets/jquery/jquery-3.1.1.min.js"></script>
 	<script src="../assets/bootstrap/js/bootstrap.min.js"></script>
-	<script src="../assets/javascript/pichart.js"></script>
+	<script src="../assets/javascript/chart.js"></script>
 </head>
 <body>
 <?php
@@ -113,7 +113,7 @@ if (isset($_GET['logout'])) {
 					include 'pages/user_profile_view_page.php';
     			}
     		}else{
-    			include 'pages/home.php';
+    			include 'pages/account_page.php';
     		}
     	?>
     </div>

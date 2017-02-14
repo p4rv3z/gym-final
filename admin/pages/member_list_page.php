@@ -14,6 +14,53 @@
 		}
 ?>
 <h2 class="content-subhead" style="text-align: center;">Member List</h2>
+<div>
+  <div class="row">
+    <div class="col-lg-6">
+      <!--Total User-->
+      <div class="table-responsive">
+      <table class="table">
+      <tr>
+        <td>
+          <canvas id="gender" width="200" height="auto">
+          <script type="text/javascript" src="../assets/javascript/gender_pie_chart.js"></script>
+        </td>
+        <td>
+          <ul>
+          <li style="color: lightgreen;"><span style="color: black;">Male: <pa id="male"></pa></span></li>
+          <li style="color: cornflowerblue;"><span style="color: black;">Female: <pa id="female"></pa></span></li>
+          <li style="color: orange;"><span style="color: black;">Other: <pa id="other"></pa></span></li>
+          <li style="color: black;"><span style="color: black;">Total: <pa id="total"></pa></span></li>
+        </ul>
+        </td>
+      </tr>
+      </table>  
+    </div>
+    </div>
+    <div class="col-lg-6">
+      <!--Membership-->
+      <div class="table-responsive">
+      <table class="table">
+      <tr>
+        <td>
+          <canvas id="member" width="200" height="auto">
+          <script type="text/javascript" src="../assets/javascript/member_pie_chart.js"></script>
+        </td>
+        <td>
+          <ul>
+          <li style="color: lightgreen;"><span style="color: black;">Starter: <pa id="starter"></pa></span></li>
+          <li style="color: cornflowerblue;"><span style="color: black;">Basic: <pa id="basic"></pa></span></li>
+          <li style="color: orange;"><span style="color: black;">Pro: <pa id="pro"></pa></span></li>
+          <li style="color: green;"><span style="color: black;">Unlimited: <pa id="unlimited"></pa></span></li>
+          <li style="color: black;"><span style="color: black;">Total: <pa id="total1"></pa></span></li>
+        </ul>
+        </td>
+      </tr>
+      </table>  
+    </div>
+    </div>
+  </div>
+</div>
 <form method="POST" action="">
   <div class="input-group">
     <input type="text" class="form-control input-lg" placeholder="Search">
