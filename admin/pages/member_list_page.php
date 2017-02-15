@@ -63,9 +63,9 @@
 </div>
 <form method="POST" action="">
   <div class="input-group">
-    <input type="text" class="form-control input-lg" placeholder="Search">
+    <input type="text" class="form-control input-lg" placeholder="Search" name="search_input" value="">
     <div class="input-group-btn">
-      <button class="btn btn-primary btn-lg" type="submit">
+      <button class="btn btn-primary btn-lg" type="submit" name="search">
         <i class="glyphicon glyphicon-search"></i>
       </button>
     </div>
@@ -77,11 +77,22 @@
 	<?php
 		$user_table = "users";
 		$user_info_table = "users_information";
+		$value = '';
 		$get_user_info = new DatabaseHelper();
-		$result = $get_user_info->getAllData($user_table);
+		if (isset($_POST['search'])&&!empty($_POST['search_input'])) {
+			$value = trim($_POST['search_input']);
+			$sql = "SELECT * FROM `users` WHERE email = '$value'";
+			$result = $get_user_info->runQuery($sql);
+			if ($result->num_rows<=0) {
+				echo "<h1>Member not Found!</h1>";
+				$result = $get_user_info->getAllData($user_table);
+			}
+		}else{
+			$result = $get_user_info->getAllData($user_table);
+		}
+		
 		$i=0;
 		while($row=$result->fetch_array()){
-			
 			$single_row = $get_user_info->retrieveData($user_info_table,trim($row['email']));
 			if (!empty($single_row)) {
 			
