@@ -7,9 +7,16 @@
     <div id="menu">
         <div class="pure-menu">
             <div class="pure-menu-heading" style="background-color: #222222;">
-                <div style="text-align: right;">
+            <table style="width: 100%">
+                <tr>
+                    <td style="text-align: left;">
+                <a href="../"><span class="glyphicon glyphicon-home"></span></a>
+                </td>
+                    <td style="text-align: right;">
                 <a href="user_profile.php"><span class="glyphicon glyphicon-pencil"></span></a>
-                </div>
+                </td>
+                </tr>
+                </table>
                 <div style="color: gray;text-align: center;text-transform:none;">
                 <img class = "img-circle" src="../images/<?php if(!empty($image_name)){echo $image_name;}else{echo 'default.png';}?>" style="width: 50px;height: auto;">
                 <br>
